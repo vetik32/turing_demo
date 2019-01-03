@@ -1,6 +1,13 @@
-<nav>
-    <a [routerLink]="['/home']" routerLinkActive="active-route">Home</a>
-    <a [routerLink]="['/settings']" routerLinkActive="active-route">Settings</a>
-</nav>
-
-<router-outlet></router-outlet>
+<dmo-layout>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav role="navigation">
+            <dmo-sidenav-list (sidenavClose)="sidenav.close()"></dmo-sidenav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <dmo-header (sidenavToggle)="sidenav.toggle()"></dmo-header>
+            <main>
+                <router-outlet></router-outlet>
+            </main>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</dmo-layout>

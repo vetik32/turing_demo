@@ -1,2 +1,6 @@
-Twits limit
-<input  type="number" [value]="twits" (change)="setTweetsCount($event)">
+<div fxHide.gt-xs>
+    <h3>Settings</h3>
+</div>
+<mat-form-field>
+    <input type="number" matInput [value]="twitsLimit" (change)="setTweetsCount($event)" placeholder="Twits limit">
+</mat-form-field>

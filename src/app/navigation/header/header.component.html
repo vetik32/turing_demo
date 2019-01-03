@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+
+  <div fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <li *ngFor="let menuItem of menu">
+        <a [routerLink]="[menuItem.path]" routerLinkActive="active-route"
+            [routerLinkActiveOptions]="{exact:true}"
+        >{{menuItem.label}}</a>
+      </li>
+    </ul>
+  </div>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

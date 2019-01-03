@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SettingsComponent } from './settings.component';
-// import { StorageModule } from '../storage/storage.module';
+import { AppMaterialModule } from '../app-material/app-material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [SettingsComponent],
   imports: [
     CommonModule,
-    // StorageModule
+    AppMaterialModule,
+    FlexLayoutModule
   ]
 })
 export class SettingsModule { }

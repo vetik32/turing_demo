@@ -1,23 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TweetsComponent } from './tweets/page/tweets.component';
-import { SettingsComponent } from './settings/settings.component';
 
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: TweetsComponent
-  },
-  {
-    path: 'settings',
-    component: SettingsComponent
-  },
-];
+import { metaRoutes } from './meta-routes';
+
+const routes: Routes = metaRoutes.map(({path, redirectTo, pathMatch, component}) => ({path, redirectTo, pathMatch, component}));
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

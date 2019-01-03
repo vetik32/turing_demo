@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+a.active-route {
+  text-decoration-color: white;
+  text-decoration: underline;
+}
+
+a:hover, a:active{
+  color: lightgray;
+}
+
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

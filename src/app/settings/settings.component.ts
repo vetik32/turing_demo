@@ -7,13 +7,13 @@ import { LocalStorageService } from '../storage/local-storage.service';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  private twits: number;
+  private twitsLimit: number;
 
   constructor(private storage: LocalStorageService) {
   }
 
   ngOnInit() {
-    this.twits = this.storage.get('TWEET_COUNT');
+    this.twitsLimit = this.storage.get('TWEET_COUNT');
   }
 
   setTweetsCount($event: any) {

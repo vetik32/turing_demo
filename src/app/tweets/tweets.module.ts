@@ -7,6 +7,7 @@ import { ChannelView } from './channel/channel.view';
 import { InMemoryDataService } from '../in-memory-data.service';
 import { ChannelComponent } from './channel/channel.component';
 import { TweetsComponent } from './page/tweets.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { TweetsComponent } from './page/tweets.component';
   imports: [
     CommonModule,
     HttpClientModule,
-
+    FlexLayoutModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
