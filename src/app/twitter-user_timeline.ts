@@ -1,6 +1,6 @@
 export const twits = [
   {
-    'created_at': 'Thu Apr 06 15:28:43 +0000 2017',
+    'created_at': 'Mon Jan 01 16:09:50 +0000 2019',
     'id': 850007368138018817,
     'id_str': '850007368138018817',
     'text': 'RT @TwitterDev: 1/ Today we’re sharing our vision for the future of the Twitter API platform!nhttps://t.co/XweGngmxlP',
@@ -224,7 +224,7 @@ export const twits = [
     'lang': 'en'
   },
   {
-    'created_at': 'Mon Apr 03 16:09:50 +0000 2017',
+    'created_at': 'Thu Dec 06 15:28:43 +0000 2018',
     'id': 848930551989915648,
     'id_str': '848930551989915648',
     'text': 'RT @TwitterMktg: Starting today, businesses can request and share locations when engaging with people ',

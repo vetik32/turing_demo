@@ -1,3 +1,35 @@
 .card-container {
   margin-bottom: 10px;
 }
+
+.twit {
+
+  span {
+  }
+
+  .full-name {
+    font-weight: bold;
+  }
+
+  .screen-name {
+    color: gray;
+  }
+
+  .time {
+    color: #8899a6;
+
+    &:before {
+      content: "\00b7";
+      padding: 0 10px;
+    }
+  }
+
+}
+
+.twit-properties mat-list-item {
+  height: inherit;
+}
+
+.twit-properties-main {
+  padding-left: 70px;
+}
