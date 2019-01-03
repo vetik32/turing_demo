@@ -14,7 +14,7 @@ const httpOptions = {
 export class ChannelService {
 
   // private messagesUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json';  // URL to web api
-  private messagesUrl = 'api/messages';  // URL to web api
+  private messagesUrl = 'api/';  // URL to web api
 
   constructor(
     private http: HttpClient,
@@ -23,7 +23,7 @@ export class ChannelService {
 
   /** GET messages from the server */
   getMessages(screen_name: string, count: number = 30): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.messagesUrl}`)
+    return this.http.get<Message[]>(`${this.messagesUrl}${screen_name.toLocaleLowerCase()}`)
       .pipe(
         tap(_ => console.log('fetched messages')),
         catchError(this.handleError('getMessages', []))

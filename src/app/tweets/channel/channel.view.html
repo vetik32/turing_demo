@@ -2,13 +2,16 @@
     <mat-card>
         <mat-card-title>{{title}}</mat-card-title>
         <mat-card-content>
-            <ul>
-                <li *ngFor="let message of messages">
-                    {{message.user.screen_name}}: {{message.text}}
-                    <hr>
-                    Created: {{message.created_at}}, <a href="{{message.url}}">re-twit</a>
-                </li>
-            </ul>
+            <mat-list>
+                <mat-list-item *ngFor="let message of messages">
+                    <img matListAvatar src="{{message.user.profile_image_url}}" alt="123">
+                    <h3 matLine>{{message.user.name}} @{{message.user.screen_name}}  {{message.created_at}}</h3>
+                    <p matLine>{{message.text}}</p>
+                    <div matLine>
+                        <a href="{{message.url}}">re-twit</a>
+                    </div>
+                </mat-list-item>
+            </mat-list>
         </mat-card-content>
     </mat-card>
 </div>

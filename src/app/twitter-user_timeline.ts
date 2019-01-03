@@ -42,8 +42,8 @@ export const twits = [
     'user': {
       'id': 6253282,
       'id_str': '6253282',
-      'name': 'Twitter API',
-      'screen_name': 'twitterapi',
+      'name': 'Make School',
+      'screen_name': 'MakeSchool',
       'location': 'San Francisco, CA',
       'description': 'The Real Twitter API. I tweet about API changes, service issues and happily answer questions',
       'url': 'http://t.co/78pYTvWfJd',

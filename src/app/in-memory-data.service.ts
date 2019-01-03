@@ -9,6 +9,39 @@ import { twits } from './twitter-user_timeline';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    return {messages: twits};
+
+    const channels = {
+      'makeschool': {
+        name: 'Make School',
+        avatar: 'mike_school.jpg'
+      },
+      'newsycombinator': {
+        name: 'Hacker News',
+        avatar: 'newsycombinator.png'
+      },
+      'ycombinator': {
+        name: 'Y Combinator',
+        avatar: 'ycombinator.jpg'
+    }
+    }
+
+    const db = {};
+
+    Object.keys(channels).forEach((endPoint: string) => {
+      db[endPoint] = twits.map((twit) => {
+        return {
+          ...twit,
+          user: {
+            ...twit.user,
+            name: channels[endPoint].name,
+            screen_name: channels[endPoint].name.replace(' ', ''),
+            profile_image_url: `/assets/avatars/${channels[endPoint].avatar}`
+          }
+        };
+      });
+
+    });
+
+    return db;
   }
 }

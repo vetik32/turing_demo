@@ -20,7 +20,7 @@ export class ChannelComponent implements OnInit {
   }
 
   getMessages(): void {
-    this.messageService.getMessages(this.channel, this.storage.get('TWEET_COUNT'))
+    this.messageService.getMessages(this.channel.substring(1), this.storage.get('TWEET_COUNT'))
       .subscribe(messages => this.messages = messages);
   }
 }
