@@ -1,21 +1,17 @@
-import { TweetsComponent } from './tweets/page/tweets.component';
-import { SettingsComponent } from './settings/settings.component';
+interface MetaRoute {
+  path: string;
+  label: string;
+  icon: string;
+}
 
-export const metaRoutes = [
-  {
-    path: '',
-    redirectTo: 'twits',
-    pathMatch: 'full',
-  },
+export const metaRoutes: MetaRoute[] = [
   {
     path: 'twits',
-    component: TweetsComponent,
     label: 'Twits',
     icon: 'speaker_notes'
   },
   {
     path: 'settings',
-    component: SettingsComponent,
     label: 'Settings',
     icon: 'settings'
   },
