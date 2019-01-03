@@ -1,8 +1,7 @@
 <div class="card-container" fxFlex>
     <mat-card>
-        <mat-card-title>{{title}} channel.view works!</mat-card-title>
+        <mat-card-title>{{title}}</mat-card-title>
         <mat-card-content>
-
             <ul>
                 <li *ngFor="let message of messages">
                     {{message.user.screen_name}}: {{message.text}}
@@ -10,7 +9,6 @@
                     Created: {{message.created_at}}, <a href="{{message.url}}">re-twit</a>
                 </li>
             </ul>
-
         </mat-card-content>
     </mat-card>
 </div>
