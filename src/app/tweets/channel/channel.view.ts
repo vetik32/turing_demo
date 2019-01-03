@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Message } from './channel.model';
 
 @Component({
   selector: 'dmo-channel-view',
@@ -8,5 +7,5 @@ import { Message } from './channel.model';
 })
 export class ChannelView {
   @Input() title: string;
-  @Input() messages: Message[];
+  @Input() messages: any[];
 }

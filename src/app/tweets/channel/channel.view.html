@@ -1,11 +1,16 @@
-<p>
-  {{title}} channel.view works!
-</p>
+<div class="card-container" fxFlex>
+    <mat-card>
+        <mat-card-title>{{title}} channel.view works!</mat-card-title>
+        <mat-card-content>
 
-<ul>
-  <li *ngFor="let message of messages">
-    {{message.username}}: {{message.content}}
-    <hr>
-    Created: {{message.created_at}}, <a href="{{message.url}}">re-twit</a>
-  </li>
-</ul>
+            <ul>
+                <li *ngFor="let message of messages">
+                    {{message.user.screen_name}}: {{message.text}}
+                    <hr>
+                    Created: {{message.created_at}}, <a href="{{message.url}}">re-twit</a>
+                </li>
+            </ul>
+
+        </mat-card-content>
+    </mat-card>
+</div>

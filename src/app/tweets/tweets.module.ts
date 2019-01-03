@@ -8,6 +8,7 @@ import { InMemoryDataService } from '../in-memory-data.service';
 import { ChannelComponent } from './channel/channel.component';
 import { TweetsComponent } from './page/tweets.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AppMaterialModule } from '../app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     HttpClientModule,
+    AppMaterialModule,
     FlexLayoutModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
