@@ -4,13 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
-import { Message } from './channel.model';
+import { Message } from './channel/channel.model';
 
 @Injectable({providedIn: 'root'})
-export class ChannelService {
+export class TwitterService {
 
-  // private messagesUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json';  // URL to web api
-  private messagesUrl = 'api/';  // URL to web api
+  private messagesUrl = 'http://localhost:7890/1.1/statuses/user_timeline.json';  // URL to web api
 
   constructor(
     private http: HttpClient,
@@ -19,7 +18,7 @@ export class ChannelService {
 
   /** GET twits from the server */
   getMessages(screen_name: string, count: number = 30): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.messagesUrl}${screen_name.toLocaleLowerCase()}`)
+    return this.http.get<Message[]>(`${this.messagesUrl}?screen_name=${screen_name.toLocaleLowerCase()}&count=${count}`)
       .pipe(
         tap(_ => console.log('fetched twits for', screen_name)),
         catchError(this.handleError('getMessages', []))

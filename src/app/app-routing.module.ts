@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TweetsComponent } from './tweets/page/tweets.component';
+import { TwitsComponent } from './twits/page/twits.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'twits',
-    component: TweetsComponent,
+    component: TwitsComponent,
   },
   {
     path: 'settings',
