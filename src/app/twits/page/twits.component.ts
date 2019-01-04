@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { channels } from '../../in-memory-data.service';
 import { LocalStorageService } from '../../storage/local-storage.service';
-
 
 @Component({
   selector: 'dmo-content',
   templateUrl: './twits.component.html',
   styleUrls: ['./twits.component.scss']
 })
-export class TwitsComponent implements OnInit {
+export class TwitsComponent {
   sortableEntities: object[] = [];
   order: [] = [];
 
@@ -24,9 +23,5 @@ export class TwitsComponent implements OnInit {
         id
       };
     });
-
-  }
-
-  ngOnInit() {
   }
 }

@@ -1,17 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'dmo-twit-view',
   templateUrl: './twit.view.html',
   styleUrls: ['./twit.view.scss']
 })
-export class TwitView implements OnInit {
+export class TwitView {
   @Input() twit: any;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
 
@@ -11,12 +11,10 @@ import { SettingsComponent } from './settings.component';
 @NgModule({
   declarations: [SettingsComponent, ChannelOrderView],
   imports: [
-    CommonModule,
+    CommonModule, //
     DragDropModule,
     AppMaterialModule,
     FlexLayoutModule
   ]
 })
-export class SettingsModule {
-}
-
+export class SettingsModule {}

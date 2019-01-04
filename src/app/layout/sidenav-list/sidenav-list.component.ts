@@ -6,20 +6,18 @@ import { metaRoutes } from '../../meta-routes';
   templateUrl: './sidenav-list.component.html',
   styleUrls: ['./sidenav-list.component.scss']
 })
-export class SidenavListComponent implements OnInit {
+export class SidenavListComponent {
   @Output() sidenavClose = new EventEmitter();
 
   public menu;
 
   constructor() {
-    this.menu = metaRoutes.filter(route => route.path).map(({path, label, icon}) => ({path: '/' + path, label, icon}));
-  }
-
-  ngOnInit() {
+    this.menu = metaRoutes
+      .filter((route) => route.path)
+      .map(({ path, label, icon }) => ({ path: '/' + path, label, icon }));
   }
 
   public onSidenavClose = () => {
     this.sidenavClose.emit();
-  }
-
+  };
 }
