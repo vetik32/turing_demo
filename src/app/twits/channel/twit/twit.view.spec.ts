@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TwitView } from './twit.component';
+import { TwitView } from './twit.view';
 
 describe('TwitComponent', () => {
   let component: TwitView;

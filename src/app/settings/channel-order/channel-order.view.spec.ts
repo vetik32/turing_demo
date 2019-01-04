@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChannelOrderView } from './chanel-order.component';
+import { ChannelOrderView } from './channel-order.view';
 
 describe('ChanelOrderComponent', () => {
   let component: ChannelOrderView;
