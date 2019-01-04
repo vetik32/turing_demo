@@ -1,7 +1,7 @@
-<div fxLayout="row wrap" class="colored box nopad">
+<div fxLayout="row wrap">
     <div fxFlex="grow" class="mat-h1" fxHide.gt-xs>Twits</div>
 
-    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex fxLayoutGap="10px">
+    <div fxLayout="row" fxLayout.lt-md="column" fxFlex fxLayoutGap="10px">
         <dmo-channel [channel]="'@MakeSchool'"></dmo-channel>
         <dmo-channel [channel]="'@newsycombinator'"></dmo-channel>
         <dmo-channel [channel]="'@ycombinator'"></dmo-channel>

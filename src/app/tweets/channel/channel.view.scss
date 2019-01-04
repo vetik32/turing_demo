@@ -17,11 +17,6 @@
 
   .time {
     color: #8899a6;
-
-    &:before {
-      content: "\00b7";
-      padding: 0 10px;
-    }
   }
 
 }
@@ -30,6 +25,17 @@
   height: inherit;
 }
 
+.twit-properties-body {
+  padding-left: 16px;
+}
+
 .twit-properties-main {
   padding-left: 70px;
+  margin-bottom: 20px;
+}
+
+.content {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
 }

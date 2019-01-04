@@ -1,4 +1,4 @@
-<div class="card-container" fxFlex>
+<div class="card-container fx-sm-row-md-col" fxFlex>
     <mat-card>
         <mat-card-title>{{title}}</mat-card-title>
         <mat-card-content>
@@ -9,15 +9,14 @@
                     <mat-list-item class="twit">
                         <img matListAvatar src="{{message.user.profile_image_url}}" alt="NA">
                         <div matLine>
-                            <span class="full-name">{{message.user.name}}</span>
                             <span class="screen-name"> @{{message.user.screen_name}}</span>
-                            <span class="time">{{message.created_at| timeAgo}}</span>
+                            <span class="time"> &middot; {{message.created_at| timeAgo}}</span>
                         </div>
                     </mat-list-item>
                 </mat-list>
 
                 <div class="twit-properties-main">
-                    <div  class="content">{{message.text}}</div>
+                    <div class="content">{{message.text}}</div>
                     <div>
                         <a href="{{message.url}}">re-twit</a>
                     </div>
