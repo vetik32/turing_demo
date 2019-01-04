@@ -1,0 +1,5 @@
+Order:
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" id="{{entity.id}}"
+        *ngFor="let entity of entities" cdkDrag>{{entity.name}}</div>
+</div>

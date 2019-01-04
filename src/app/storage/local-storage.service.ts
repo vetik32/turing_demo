@@ -4,11 +4,12 @@ const STORAGE_KEY = 'turing_demo_settings';
 
 interface AppSettings {
   TWEET_COUNT: number;
+  CHANNEL_ORDER: [];
 }
 
 const defaultSettings = {
   TWEET_COUNT: 30
-};
+} as AppSettings;
 
 export type SETTINGS_KEYS = keyof AppSettings;
 

@@ -9,6 +9,7 @@ import { LocalStorageService } from '../../storage/local-storage.service';
   styleUrls: ['./channel.component.scss']
 })
 export class ChannelComponent implements OnInit {
+  @Input() title: string;
   @Input() channel: string;
   public messages: Message[] = [];
 
