@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ChannelView {
   @Input() title: string;
-  @Input() messages: any[];
+  @Input() twits: any[];
 }

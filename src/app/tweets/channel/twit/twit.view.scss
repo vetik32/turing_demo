@@ -1,0 +1,38 @@
+
+.twit {
+
+  span {
+  }
+
+  .full-name {
+    font-weight: bold;
+  }
+
+  .screen-name {
+    color: gray;
+  }
+
+  .time {
+    color: #8899a6;
+  }
+
+}
+
+.twit-properties mat-list-item {
+  height: inherit;
+}
+
+.twit-properties-body {
+  padding-left: 16px;
+}
+
+.twit-properties-main {
+  padding-left: 70px;
+  margin-bottom: 20px;
+}
+
+.content {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}

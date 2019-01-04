@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { Message } from './channel.model';
-
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
-};
 
 @Injectable({providedIn: 'root'})
 export class ChannelService {
@@ -21,11 +17,11 @@ export class ChannelService {
   ) {
   }
 
-  /** GET messages from the server */
+  /** GET twits from the server */
   getMessages(screen_name: string, count: number = 30): Observable<Message[]> {
     return this.http.get<Message[]>(`${this.messagesUrl}${screen_name.toLocaleLowerCase()}`)
       .pipe(
-        tap(_ => console.log('fetched messages')),
+        tap(_ => console.log('fetched twits for', screen_name)),
         catchError(this.handleError('getMessages', []))
       );
   }

@@ -10,10 +10,12 @@ import { TweetsComponent } from './page/tweets.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { TwitView } from './channel/twit/twit.view';
 
 @NgModule({
   declarations: [
     ChannelView,
+    TwitView,
     ChannelComponent,
     TweetsComponent,
     TimeAgoPipe
