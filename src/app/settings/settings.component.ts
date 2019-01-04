@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { LocalStorageService } from '../storage/local-storage.service';
 
 import { channels } from '../in-memory-data.service';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'dmo-settings',
@@ -9,11 +10,12 @@ import { channels } from '../in-memory-data.service';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
+  @HostBinding('class') componentCssClass;
   order: string[];
   sortableEntities: object[] = [];
   private twitsLimit: number;
 
-  constructor(private storage: LocalStorageService) {
+  constructor(private storage: LocalStorageService, public overlayContainer: OverlayContainer) {
     console.log('from storage', this.storage.get('CHANNEL_ORDER'));
     console.log('from object', Object.keys(channels));
 
@@ -33,5 +35,10 @@ export class SettingsComponent implements OnInit {
 
   setOrder(newOrder: string[]) {
     this.storage.save('CHANNEL_ORDER', newOrder);
+  }
+
+  onSetTheme(theme) {
+    this.overlayContainer.getContainerElement().classList.add(theme);
+    this.componentCssClass = theme;
   }
 }

@@ -5,10 +5,12 @@ const STORAGE_KEY = 'turing_demo_settings';
 interface AppSettings {
   TWEET_COUNT: number;
   CHANNEL_ORDER: [];
+  CURRENT_THEME_NAME: string;
 }
 
 const defaultSettings = {
-  TWEET_COUNT: 30
+  TWEET_COUNT: 30,
+  CURRENT_THEME_NAME: 'indigo-pink'
 } as AppSettings;
 
 export type SETTINGS_KEYS = keyof AppSettings;
