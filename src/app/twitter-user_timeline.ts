@@ -1,5 +1,6 @@
 export const twits = [
   {
+    'url': 'https://twitter.com/CretaVentures/status/1075930448755183616',
     'created_at': 'Mon Jan 01 16:09:50 +0000 2019',
     'id': 850007368138018817,
     'id_str': '850007368138018817',
@@ -224,6 +225,7 @@ export const twits = [
     'lang': 'en'
   },
   {
+    'url': 'https://twitter.com/MakeSchool/status/1078410716732887040',
     'created_at': 'Thu Dec 06 15:28:43 +0000 2018',
     'id': 848930551989915648,
     'id_str': '848930551989915648',

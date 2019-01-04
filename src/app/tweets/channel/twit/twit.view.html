@@ -1,16 +1,18 @@
-<mat-list class="twit-properties">
-  <mat-list-item class="twit">
+<mat-list class="twit twit-properties">
+  <mat-list-item>
     <img matListAvatar src="{{twit.user.profile_image_url}}" alt="NA">
     <div matLine>
-      <span class="screen-name"> @{{twit.user.screen_name}}</span>
+      <span class="screen-name"> <a href="https://twitter.com/{{twit.user.screen_name}}">@{{twit.user.screen_name}}</a></span>
       <span class="time"> &middot; {{twit.created_at| timeAgo}}</span>
     </div>
   </mat-list-item>
 </mat-list>
 
-<div class="twit-properties-main">
+<div class="twit twit-properties-main">
   <div class="content">{{twit.text}}</div>
   <div>
-    <a href="{{twit.url}}">re-twit</a>
+    <a href="{{twit.url}}" class="action "><mat-icon>link</mat-icon></a>
+    <mat-icon class="action" matBadge="{{twit.retweet_count}}" matBadgePosition="below after" matBadgeColor="accent">sync</mat-icon>
+    <mat-icon class="action" matBadge="{{twit.favorite_count}}" matBadgePosition="below after" matBadgeColor="accent">favorite_border</mat-icon>
   </div>
 </div>

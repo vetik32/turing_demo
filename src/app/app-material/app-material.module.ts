@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
+  MatBadgeModule,
   MatCardModule,
   MatIconModule,
   MatInputModule,
@@ -13,6 +14,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const matModules = [
+  MatBadgeModule,
   MatButtonModule,
   MatInputModule,
   MatIconModule,
