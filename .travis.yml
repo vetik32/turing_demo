@@ -5,12 +5,6 @@ language: node_js
 node_js:
   - "8"
 
-before_script:
-  - npm i -g jasmine-node
-  - npm i jasmine-node
-  - which jasmine-node
-  - jasmine-node --version
-
 addons:
   apt:
     sources:
@@ -31,5 +25,4 @@ jobs:
       script:
         - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
         - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-        - echo "Reporting coverage"
-        - istanbul cover jasmine-node --captureExceptions src/app/**/*.spec.ts && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+        - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
