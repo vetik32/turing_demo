@@ -5,12 +5,6 @@ language: node_js
 node_js:
   - "8"
 
-before_script:
-#  - npm i -g jasmine-node
-#  - npm i jasmine-node
-  - which jasmine-node
-  - jasmine-node --version
-
 addons:
   apt:
     sources:
@@ -25,15 +19,6 @@ cache:
 install:
   - npm install
  
-#script:
-#  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-#  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
-#  - istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
-#jobs:
-#  include:
-#    - stage: Produce Coverage
-#      node_js: node
-#      script: istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 jobs:
   include:
     - stage: "Tests"                # naming the Tests stage
@@ -41,5 +26,5 @@ jobs:
       script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
     - script: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
       name: "Integration Tests"     # names the second Tests stage job
-    - stage: "Reporting coverage"
-      script: istanbul cover jasmine-node --captureExceptions src/app/**/*.spec.ts && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+    - script: istanbul cover jasmine-node --captureExceptions src/app/**/*.spec.ts && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+      name: "Reporting coverage"
