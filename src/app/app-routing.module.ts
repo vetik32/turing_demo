@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TwitsComponent } from './twits/page/twits.component';
+import { TwitsComponent } from './twits/twits.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [

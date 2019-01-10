@@ -1,4 +1,7 @@
 import { async, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
+
 import { ThemePickerView } from './theme-picker';
 import { ThemePickerModule } from './theme-picker.module';
 
@@ -7,6 +10,14 @@ describe('ThemePicker', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ThemePickerModule],
+      providers: [
+        {
+          provide: ActivatedRoute, useValue: {
+            params: of({ id: 'test' })
+          }
+        }
+      ]
+
     }).compileComponents();
   }));
 

@@ -1,6 +1,14 @@
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TimeAgoPipe } from 'time-ago-pipe';
+
+import { AppMaterialModule } from '../../app-material/app-material.module';
 
 import { ChannelComponent } from './channel.component';
+import { ChannelView } from './channel.view';
+import { TwitView } from './twit/twit.view';
 
 describe('ChannelComponent', () => {
   let component: ChannelComponent;
@@ -8,9 +16,15 @@ describe('ChannelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChannelComponent ]
-    })
-    .compileComponents();
+        imports: [
+          CommonModule,
+          HttpClientModule,
+          AppMaterialModule,
+          FlexLayoutModule
+        ],
+        declarations: [ChannelComponent, ChannelView, TwitView, TimeAgoPipe]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

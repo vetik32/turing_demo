@@ -16,11 +16,13 @@ export class ChannelComponent implements OnInit {
   constructor(private twitterService: TwitterService, private storage: LocalStorageService) {}
 
   ngOnInit() {
-    this.getMessages();
+    if (this.channel) {
+      this.getMessages();
+    }
   }
 
   getMessages(): void {
-    this.twitterService.getMessages(this.channel.substring(1), this.storage.get('TWEET_COUNT'))
+    this.twitterService.getMessages(this.channel, this.storage.get('TWEET_COUNT'))
       .subscribe(messages => this.messages = messages);
   }
 }

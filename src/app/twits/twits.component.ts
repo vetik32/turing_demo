@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { channels } from '../../in-memory-data.service';
-import { LocalStorageService } from '../../storage/local-storage.service';
+import { channels } from '../in-memory-data.service';
+import { LocalStorageService } from '../storage/local-storage.service';
 
 @Component({
   selector: 'dmo-content',
