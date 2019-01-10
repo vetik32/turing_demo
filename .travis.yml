@@ -8,8 +8,8 @@ node_js:
 before_script:
   - npm i -g jasmine-node
   - npm i jasmine-node
-  - echo "Looking for jasmine-node"
-  - ls -ls node_modules/.bin
+  - which jasmine-node
+  - jasmine-node --version
 
 addons:
   apt:
@@ -28,8 +28,9 @@ install:
 script:
   - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
   - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
-jobs:
-  include:
-    - stage: Produce Coverage
-      node_js: node
-      script: istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+#jobs:
+#  include:
+#    - stage: Produce Coverage
+#      node_js: node
+#      script: istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
