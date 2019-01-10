@@ -1,6 +1,7 @@
 # TuringDemo
 
 [![Build Status](https://travis-ci.com/vetik32/turing_demo.svg?branch=master)](https://travis-ci.com/vetik32/turing_demo)
+[![Coverage Status](https://coveralls.io/repos/github/vetik32/turing_demo/badge.svg?branch=master)](https://coveralls.io/github/vetik32/turing_demo?branch=master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
