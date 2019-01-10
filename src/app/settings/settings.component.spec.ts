@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SettingsComponent } from './settings.component';
+import { SettingsModule } from './settings.module';
+import { ThemePickerModule } from './theme-picker/theme-picker.module';
 
 describe('SettingsComponent', () => {
   let component: SettingsComponent;
@@ -8,9 +11,14 @@ describe('SettingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SettingsComponent ]
-    })
-    .compileComponents();
+        declarations: [],
+        imports: [
+          ThemePickerModule,
+          SettingsModule,
+          RouterTestingModule
+        ]
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {

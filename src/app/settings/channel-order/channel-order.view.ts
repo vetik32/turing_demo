@@ -7,7 +7,7 @@ import { CdkDragDrop, moveItemInArray, } from '@angular/cdk/drag-drop';
   styleUrls: ['./channel-order.view.scss']
 })
 export class ChannelOrderView implements OnInit {
-  @Input() entities: any[];
+  @Input() entities: any[] = [];
   @Output() orderChange = new EventEmitter<string[]>();
   order: string[] = [];
 

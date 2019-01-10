@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ChannelView } from './channel/channel.view';
 import { ChannelComponent } from './channel/channel.component';
-import { TwitsComponent } from './page/twits.component';
+import { TwitsComponent } from './twits.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { TimeAgoPipe } from 'time-ago-pipe';

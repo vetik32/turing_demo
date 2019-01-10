@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TimeAgoPipe } from 'time-ago-pipe';
+
+import { AppMaterialModule } from '../../../app-material/app-material.module';
 
 import { TwitView } from './twit.view';
 
@@ -8,7 +11,10 @@ describe('TwitComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TwitView ]
+      imports:[
+        AppMaterialModule
+      ],
+      declarations: [ TwitView, TimeAgoPipe ]
     })
     .compileComponents();
   }));
@@ -16,6 +22,7 @@ describe('TwitComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TwitView);
     component = fixture.componentInstance;
+    component.twit = {user:{}};
     fixture.detectChanges();
   });
 
