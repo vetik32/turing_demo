@@ -8,6 +8,8 @@ node_js:
 before_script:
   - npm i -g jasmine-node
   - npm i jasmine-node
+  - echo "Looking for jasmine-node"
+  - ls -ls node_modules/.bin
 
 addons:
   apt:
