@@ -6,8 +6,8 @@ node_js:
   - "8"
 
 before_script:
-  - npm i -g jasmine-node
-  - npm i jasmine-node
+#  - npm i -g jasmine-node
+#  - npm i jasmine-node
   - which jasmine-node
   - jasmine-node --version
 
@@ -25,12 +25,21 @@ cache:
 install:
   - npm install
  
-script:
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
-  - istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+#script:
+#  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+#  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+#  - istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 #jobs:
 #  include:
 #    - stage: Produce Coverage
 #      node_js: node
 #      script: istanbul cover jasmine-node --captureExceptions spec/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+jobs:
+  include:
+    - stage: "Tests"                # naming the Tests stage
+      name: "Unit Tests"            # names the first Tests stage job
+      script: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+    - script: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+      name: "Integration Tests"     # names the second Tests stage job
+    - stage: "Reporting coverage"
+      script: istanbul cover jasmine-node --captureExceptions src/app/**/*.spec.ts && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
