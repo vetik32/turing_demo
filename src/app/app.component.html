@@ -4,7 +4,7 @@
             <dmo-sidenav-list (sidenavClose)="sidenav.close()"></dmo-sidenav-list>
         </mat-sidenav>
         <mat-sidenav-content>
-            <dmo-header (sidenavToggle)="sidenav.toggle()"></dmo-header>
+            <dmo-header-view (sidenavToggle)="sidenav.toggle()" [menu]="appTopMenu"></dmo-header-view>
             <main>
                 <router-outlet></router-outlet>
             </main>

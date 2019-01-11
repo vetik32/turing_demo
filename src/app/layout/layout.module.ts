@@ -4,14 +4,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
-import { HeaderComponent } from './header/header.component';
+import { HeaderView } from './header/header.view';
 import { LayoutComponent } from './layout.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
+
 
 @NgModule({
   declarations: [
     SidenavListComponent, //
-    HeaderComponent,
+    HeaderView,
     LayoutComponent
   ],
   imports: [
@@ -22,7 +23,7 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
   ],
   exports: [
     SidenavListComponent, //
-    HeaderComponent,
+    HeaderView,
     LayoutComponent
   ]
 })

@@ -1,4 +1,4 @@
-interface MetaRoute {
+export interface MetaRoute {
   path: string;
   label: string;
   icon: string;
