@@ -1,5 +1,10 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, } from '@angular/cdk/drag-drop';
+
+export interface OrderItem {
+  id: string;
+  name: string;
+}
 
 @Component({
   selector: 'dmo-channel-order',
@@ -7,12 +12,12 @@ import { CdkDragDrop, moveItemInArray, } from '@angular/cdk/drag-drop';
   styleUrls: ['./channel-order.view.scss']
 })
 export class ChannelOrderView implements OnInit {
-  @Input() entities: any[] = [];
+  @Input() entities: OrderItem[] = [];
   @Output() orderChange = new EventEmitter<string[]>();
   order: string[] = [];
 
   ngOnInit() {
-    this.order = this.entities.map(({id}) => id);
+    this.order = this.entities.map(({ id }) => id);
   }
 
   drop(event: CdkDragDrop<string[]>) {
@@ -22,7 +27,6 @@ export class ChannelOrderView implements OnInit {
   }
 
   private swap(previousIndex, currentIndex) {
-
     this.order.splice(currentIndex, 0, this.order.splice(previousIndex, 1)[0]);
 
     this.orderChange.emit(this.order);

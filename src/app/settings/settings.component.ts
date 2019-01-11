@@ -3,6 +3,7 @@ import { LocalStorageService } from '../storage/local-storage.service';
 
 import { channels } from '../in-memory-data.service';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { OrderItem } from './channel-order/channel-order.view';
 
 @Component({
   selector: 'dmo-settings',
@@ -12,13 +13,10 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 export class SettingsComponent implements OnInit {
   @HostBinding('class') componentCssClass;
   order: string[];
-  sortableEntities: object[] = [];
+  sortableEntities: OrderItem[] = [];
   private twitsLimit: number;
 
   constructor(private storage: LocalStorageService, public overlayContainer: OverlayContainer) {
-    console.log('from storage', this.storage.get('CHANNEL_ORDER'));
-    console.log('from object', Object.keys(channels));
-
     this.order = this.storage.get('CHANNEL_ORDER') || Object.keys(channels);
     this.twitsLimit = this.storage.get('TWEET_COUNT');
 
