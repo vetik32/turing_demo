@@ -4,6 +4,7 @@ import {
   MatBadgeModule,
   MatButtonModule,
   MatCardModule,
+  MatOptionModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -11,13 +12,14 @@ import {
   MatSidenavModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatGridListModule
+  MatGridListModule, MatSelectModule, MatDialogModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const matModules = [
   MatButtonModule,
+  MatDialogModule,
   MatIconModule,
   MatMenuModule,
   MatGridListModule,
@@ -27,6 +29,8 @@ const matModules = [
   MatInputModule,
   MatIconModule,
   MatListModule,
+  MatOptionModule,
+  MatSelectModule,
   MatSidenavModule,
   MatToolbarModule,
   MatCardModule

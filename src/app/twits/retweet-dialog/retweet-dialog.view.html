@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Retweet this to your followers?</h2>
+
+<mat-dialog-content [formGroup]="form">
+  <mat-form-field style="width: 100%">
+    <input matInput placeholder="Add a comment..." formControlName="comment" />
+  </mat-form-field>
+
+  <mat-list-item *ngIf="tweet">
+    <div matLine>
+      <span class="screen-name"> <a href="https://twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a></span>
+      <span class="time"> &middot; {{tweet.created_at| timeAgo}}</span>
+    </div>
+    <div class="twit twit-properties-main">
+      <div class="content">{{tweet.text}}</div>
+    </div>
+  </mat-list-item>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button class="mat-raised-button closeButton" (click)="close()">Close</button>
+
+  <button class="mat-raised-button mat-primary" (click)="retweet()">Retweet</button>
+</mat-dialog-actions>

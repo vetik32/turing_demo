@@ -10,7 +10,7 @@ import { OrderItem } from './channel-order/channel-order.view';
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent  {
   @HostBinding('class') componentCssClass;
   order: string[];
   sortableEntities: OrderItem[] = [];
@@ -20,11 +20,7 @@ export class SettingsComponent implements OnInit {
     this.order = this.storage.get('CHANNEL_ORDER') || Object.keys(channels);
     this.twitsLimit = this.storage.get('TWEET_COUNT');
 
-    this.sortableEntities = this.order.map((id) => ({...channels[id], id}));
-  }
-
-  ngOnInit() {
-    console.log('settings ng init');
+    this.sortableEntities = this.order.map((id) => ({ ...channels[id], id }));
   }
 
   setTweetsCount($event: any) {

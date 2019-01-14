@@ -12,7 +12,8 @@
   <div class="content">{{twit.text}}</div>
   <div>
     <a href="{{twit.url}}" class="action "><mat-icon>link</mat-icon></a>
-    <mat-icon class="action" matBadge="{{twit.retweet_count}}" matBadgePosition="below after" matBadgeColor="accent">sync</mat-icon>
+    <mat-icon class="action" (click)="onRetwit()"
+        matBadge="{{twit.retweet_count}}" matBadgePosition="below after" matBadgeColor="accent">sync</mat-icon>
     <mat-icon class="action" matBadge="{{twit.favorite_count}}" matBadgePosition="below after" matBadgeColor="accent">favorite_border</mat-icon>
   </div>
 </div>
