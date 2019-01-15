@@ -6,8 +6,8 @@ export interface MetaRoute {
 
 export const metaRoutes: MetaRoute[] = [
   {
-    path: 'twits',
-    label: 'Twits',
+    path: 'tweets',
+    label: 'Tweets',
     icon: 'speaker_notes'
   },
   {

@@ -3,7 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { LocalStorageService } from '../../storage/local-storage.service';
 import { RetweetDialogView } from '../retweet-dialog/retweet-dialog.view';
 import { Tweet } from '../tweet.model';
-import { TwitterService } from '../twitter.service';
+import { TweeterService } from '../tweeter.service';
 
 @Component({
   selector: 'dmo-channel',
@@ -13,10 +13,10 @@ import { TwitterService } from '../twitter.service';
 export class ChannelComponent implements OnInit {
   @Input() title: string;
   @Input() channel: string;
-  public twits: Tweet[] = [];
+  public tweets: Tweet[] = [];
 
   constructor(
-    private twitterService: TwitterService,
+    private twitterService: TweeterService,
     private storage: LocalStorageService,
     private retwitDialog: MatDialog
   ) {}
@@ -30,18 +30,16 @@ export class ChannelComponent implements OnInit {
   getMessages(): void {
     this.twitterService
       .getTweets(this.channel, this.storage.get('TWEET_COUNT'))
-      .subscribe((twits) => (this.twits = twits));
+      .subscribe((tweets) => (this.tweets = tweets));
   }
 
-  openRetwitDialog(twit: Tweet) {
+  openRetweetDialog(tweet: Tweet) {
     const dialogConfig = new MatDialogConfig();
 
-    // dialogConfig.disableClose = true;
-    // dialogConfig.autoFocus = true;
-    dialogConfig.data = twit;
+    dialogConfig.data = tweet;
 
     const dialogRef = this.retwitDialog.open(RetweetDialogView, dialogConfig);
 
-    dialogRef.afterClosed().subscribe((text) => this.twitterService.retweet(twit.id_str, text));
+    dialogRef.afterClosed().subscribe((text) => this.twitterService.retweet(tweet.id_str, text));
   }
 }

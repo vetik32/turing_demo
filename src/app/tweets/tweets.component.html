@@ -1,8 +1,8 @@
 <div fxLayout="row wrap">
-    <div fxFlex="grow" class="mat-h1" fxHide.gt-xs>Twits</div>
+    <div fxFlex="grow" class="mat-h1" fxHide.gt-xs>Tweets</div>
 
     <div fxLayout="row" fxLayout.lt-md="column" fxFlex fxLayoutGap="10px">
         <dmo-channel [title]="channel.name" [channel]="channel.id"
-            *ngFor="let channel of sortableEntities"></dmo-channel>
+            *ngFor="let channel of channels"></dmo-channel>
     </div>
 </div>

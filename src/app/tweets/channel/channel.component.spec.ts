@@ -8,7 +8,7 @@ import { AppMaterialModule } from '../../app-material/app-material.module';
 
 import { ChannelComponent } from './channel.component';
 import { ChannelView } from './channel.view';
-import { TwitView } from './twit/twit.view';
+import { TweetView } from './tweet/tweet.view';
 
 describe('ChannelComponent', () => {
   let component: ChannelComponent;
@@ -22,7 +22,7 @@ describe('ChannelComponent', () => {
           AppMaterialModule,
           FlexLayoutModule
         ],
-        declarations: [ChannelComponent, ChannelView, TwitView, TimeAgoPipe]
+        declarations: [ChannelComponent, ChannelView, TweetView, TimeAgoPipe]
       })
       .compileComponents();
   }));

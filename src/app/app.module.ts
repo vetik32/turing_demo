@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { SettingsModule } from './settings/settings.module';
-import { TwitsModule } from './twits/twits.module';
+import { TweetsModule } from './tweets/tweets.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +17,7 @@ import { TwitsModule } from './twits/twits.module';
     FlexLayoutModule,
     AppMaterialModule,
     LayoutModule,
-    TwitsModule,
+    TweetsModule,
     SettingsModule
   ],
 

@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TwitsComponent } from './twits/twits.component';
+import { TweetsComponent } from './tweets/tweets.component';
 import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'twits',
+    redirectTo: 'tweets',
     pathMatch: 'full',
   },
   {
-    path: 'twits',
-    component: TwitsComponent,
+    path: 'tweets',
+    component: TweetsComponent,
   },
   {
     path: 'settings',

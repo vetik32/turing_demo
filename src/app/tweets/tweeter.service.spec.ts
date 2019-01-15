@@ -1,15 +1,15 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
-import { TwitterService } from './twitter.service';
+import { TweeterService } from './tweeter.service';
 
-describe('TwitterService', () => {
+describe('TweeterService', () => {
   beforeEach(() => TestBed.configureTestingModule({
     imports: [ HttpClientModule]
   }));
 
   it('should be created', () => {
-    const service: TwitterService = TestBed.get(TwitterService);
+    const service: TweeterService = TestBed.get(TweeterService);
     expect(service).toBeTruthy();
   });
 });

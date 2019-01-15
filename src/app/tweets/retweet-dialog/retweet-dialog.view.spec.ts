@@ -1,5 +1,5 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, NgZone } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material';
@@ -8,6 +8,16 @@ import { AppMaterialModule } from '../../app-material/app-material.module';
 import { Tweet } from '../tweet.model';
 
 import { RetweetDialogView } from './retweet-dialog.view';
+
+class NgZoneMock {
+  runOutsideAngular(fn: Function) {
+    return fn();
+  }
+
+  run(fn: Function) {
+    return fn();
+  }
+}
 
 describe('RetweetDialogView', () => {
   let dialog: MatDialog;
@@ -46,7 +56,7 @@ describe('RetweetDialogView', () => {
   });
 
   it('shows dialog with tweet details (user, text, create_at)', (done) => {
-
+    const timeAgoPipe = new TimeAgoPipe(null, new NgZoneMock() as NgZone);
     const config = {
       data: mockTweet
     };
@@ -66,7 +76,8 @@ describe('RetweetDialogView', () => {
 
     expect(title.item(0).textContent).toContain('Retweet this to your followers?');
     expect(screenName.textContent).toContain(`@${mockTweet.user.screen_name}`);
-    expect(time.textContent).toContain('18 days ago');
+
+    expect(time.textContent).toContain(timeAgoPipe.transform(mockTweet.created_at));
     expect(content.textContent).toContain(mockTweet.text);
     expect(retweetButton.textContent).toContain('Retweet');
     //

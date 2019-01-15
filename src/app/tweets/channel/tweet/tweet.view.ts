@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
 import { Tweet } from '../../tweet.model';
 
 @Component({
-  selector: 'dmo-twit-view',
-  templateUrl: './twit.view.html',
-  styleUrls: ['./twit.view.scss'],
+  selector: 'dmo-tweet-view',
+  templateUrl: './tweet.view.html',
+  styleUrls: ['./tweet.view.scss'],
 })
-export class TwitView {
+export class TweetView {
   @Input() twit: Tweet;
   @Output() retwit = new EventEmitter();
 

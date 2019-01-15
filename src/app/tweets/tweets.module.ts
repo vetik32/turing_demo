@@ -5,19 +5,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ChannelView } from './channel/channel.view';
 import { ChannelComponent } from './channel/channel.component';
-import { TwitsComponent } from './twits.component';
+import { TweetsComponent } from './tweets.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { TimeAgoPipe } from 'time-ago-pipe';
-import { TwitView } from './channel/twit/twit.view';
+import { TweetView } from './channel/tweet/tweet.view';
 import { RetweetDialogView } from './retweet-dialog/retweet-dialog.view';
 
 @NgModule({
   declarations: [
     ChannelView,
-    TwitView,
+    TweetView,
     ChannelComponent,
-    TwitsComponent,
+    TweetsComponent,
     TimeAgoPipe,
     RetweetDialogView
   ],
@@ -36,5 +36,5 @@ import { RetweetDialogView } from './retweet-dialog/retweet-dialog.view';
     RetweetDialogView
   ]
 })
-export class TwitsModule {
+export class TweetsModule {
 }

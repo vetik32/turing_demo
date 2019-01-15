@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 
-import { channels } from '../in-memory-data.service';
+import { Channel, channels } from '../channels';
 import { LocalStorageService } from '../storage/local-storage.service';
 
 @Component({
   selector: 'dmo-content',
-  templateUrl: './twits.component.html',
-  styleUrls: ['./twits.component.scss']
+  templateUrl: './tweets.component.html',
+  styleUrls: ['./tweets.component.scss']
 })
-export class TwitsComponent {
-  sortableEntities: object[] = [];
+export class TweetsComponent {
+  channels: Channel[] = [];
   order: [] = [];
 
   constructor(private storage: LocalStorageService) {
     this.order = this.storage.get('CHANNEL_ORDER') || Object.keys(channels);
 
-    this.sortableEntities = this.order.map((id) => {
+    this.channels = this.order.map((id) => {
       const a: { name: string } = channels[id];
 
       return {

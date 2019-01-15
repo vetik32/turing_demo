@@ -9,18 +9,18 @@ import { Tweet } from './tweet.model';
 const apiHostUrl = 'http://localhost:7890';
 
 @Injectable({ providedIn: 'root' })
-export class TwitterService {
+export class TweeterService {
   private userTimelineUrl = `${apiHostUrl}/1.1/statuses/user_timeline.json`; // URL to web api
   private retwitUrl = `${apiHostUrl}//1.1/statuses/retweet/:id.json`; // URL to web api
 
   constructor(private http: HttpClient) {}
 
-  /** GET twits from the server */
+  /** GET tweets from the server */
   getTweets(screenName: string, count: number = 30): Observable<Tweet[]> {
     return this.http
       .get<Tweet[]>(`${this.userTimelineUrl}?screen_name=${screenName.toLocaleLowerCase()}&count=${count}`)
       .pipe(
-        tap((_) => console.log('fetched twits for', screenName)),
+        tap((_) => console.log('fetched tweets for', screenName)),
         catchError(this.handleError('getTweets', []))
       );
   }

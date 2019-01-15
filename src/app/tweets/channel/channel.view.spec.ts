@@ -3,7 +3,7 @@ import { TimeAgoPipe } from 'time-ago-pipe';
 import { AppMaterialModule } from '../../app-material/app-material.module';
 
 import { ChannelView} from './channel.view';
-import { TwitView } from './twit/twit.view';
+import { TweetView } from './tweet/tweet.view';
 
 describe('ChannelView', () => {
   let component: ChannelView;
@@ -14,7 +14,7 @@ describe('ChannelView', () => {
       imports: [
         AppMaterialModule,
       ],
-      declarations: [ ChannelView, TwitView , TimeAgoPipe]
+      declarations: [ ChannelView, TweetView , TimeAgoPipe]
     })
     .compileComponents();
   }));

@@ -6,24 +6,24 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 
 import { ChannelComponent } from './channel/channel.component';
 import { ChannelView } from './channel/channel.view';
-import { TwitView } from './channel/twit/twit.view';
+import { TweetView } from './channel/tweet/tweet.view';
 
-import { TwitsComponent } from './twits.component';
+import { TweetsComponent } from './tweets.component';
 
 describe('TweetsComponent', () => {
-  let component: TwitsComponent;
-  let fixture: ComponentFixture<TwitsComponent>;
+  let component: TweetsComponent;
+  let fixture: ComponentFixture<TweetsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
         imports: [AppMaterialModule, HttpClientModule],
-        declarations: [TwitsComponent, ChannelComponent, ChannelView, TwitView, TimeAgoPipe]
+        declarations: [TweetsComponent, ChannelComponent, ChannelView, TweetView, TimeAgoPipe]
       })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TwitsComponent);
+    fixture = TestBed.createComponent(TweetsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
