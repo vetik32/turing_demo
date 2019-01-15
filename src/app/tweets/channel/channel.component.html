@@ -1,5 +1,5 @@
 <dmo-channel-view [title]="title">
-    <div *ngFor="let twit of tweets">
-        <dmo-tweet-view [twit]="twit" (retwit)="openRetweetDialog(twit)"></dmo-tweet-view>
+    <div *ngFor="let tweet of tweets">
+        <dmo-tweet-view [tweet]="tweet" (retwit)="openRetweetDialog(tweet)"></dmo-tweet-view>
     </div>
 </dmo-channel-view>

@@ -7,7 +7,7 @@ import { Tweet } from '../../tweet.model';
   styleUrls: ['./tweet.view.scss'],
 })
 export class TweetView {
-  @Input() twit: Tweet;
+  @Input() tweet: Tweet;
   @Output() retwit = new EventEmitter();
 
   onRetwit() {

@@ -5,7 +5,6 @@ export interface Tweet {
   retweet_count: number;
   text: string;
   user: User;
-  url: string;
 }
 
 export interface User {

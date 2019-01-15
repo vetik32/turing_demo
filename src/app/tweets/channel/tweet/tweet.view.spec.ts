@@ -20,7 +20,7 @@ describe('TwitComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TweetView);
     component = fixture.componentInstance;
-    component.twit = { user: {} as User } as Tweet;
+    component.tweet = { user: {} as User } as Tweet;
     fixture.detectChanges();
   });
 
