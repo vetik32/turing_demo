@@ -1,8 +1,7 @@
 # Code challenge #1 - TwitterAggregator
 
 [![Build Status](https://travis-ci.com/vandriesh/twitter-aggregator-code-challenge.svg?branch=master)](https://travis-ci.com/vandriesh/twitter-aggregator-code-challenge)
-[![Coverage Status](https://coveralls.io/repos/github/vetik32/turing_demo/badge.svg?branch=master)](https://coveralls.io/github/vetik32/turing_demo?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/vandriesh/twitter-aggregator-code-challenge/badge.svg?branch=master)](https://coveralls.io/github/vandriesh/twitter-aggregator-code-challenge?branch=master)
 
 ## Part I: 
 
