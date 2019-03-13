@@ -31,6 +31,14 @@ If you feel inspired, here are more things you can do:
 * Add another feature you feel is missing from our application
 * Adding unit tests will be great
 
+## Backend
+
+### Info
+1. Twitter API can be accessed via local proxy:
+1. The proxy server should be already running in the background. 
+   If you provided correct credentials for your Twitter API and Twitter Secret Key, you should now be able to use the api as the example below:
+   `http://localhost:7890/1.1/statuses/user_timeline.json?count=30&screen_name=makeschool`
+
 ## Build, start and test
 This project was generated with ng-cli - so you know what to do
 
